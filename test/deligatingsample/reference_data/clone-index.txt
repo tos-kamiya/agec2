@@ -1,0 +1,16 @@
+# --ngram-size=6
+# --max-call-depth=-2
+# --max-method-definition=-1
+# --allow-repetitive-ngram
+
+ope:
+  java/io/PrintStream.println:(Ljava/lang/String;)V
+  java/io/PrintStream.println:(Ljava/lang/String;)V
+  java/io/PrintStream.println:(Ljava/lang/String;)V
+  java/io/PrintStream.println:(Ljava/lang/String;)V
+  java/io/PrintStream.println:(Ljava/lang/String;)V
+  java/io/PrintStream.println:(Ljava/lang/String;)V
+loc:
+  Deligating.fooDirect:()V,5 >1
+  Deligating.fooIndirect:()V,5 >2
+

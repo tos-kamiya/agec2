@@ -1,0 +1,19 @@
+# --ngram-size=6
+# --max-call-depth=-2
+# --max-method-definition=-1
+# --allow-repetitive-ngram
+
+java/io/PrintStream.println:(Ljava/lang/String;)V	Deligating.fooDirect:()V,5	0
+java/io/PrintStream.println:(Ljava/lang/String;)V	Deligating.fooDirect:()V,13	0
+java/io/PrintStream.println:(Ljava/lang/String;)V	Deligating.fooDirect:()V,21	0
+java/io/PrintStream.println:(Ljava/lang/String;)V	A.foo:()V,5	1
+java/io/PrintStream.println:(Ljava/lang/String;)V	A.foo:()V,13	1
+java/io/PrintStream.println:(Ljava/lang/String;)V	A.foo:()V,21	1
+
+java/io/PrintStream.println:(Ljava/lang/String;)V	Deligating.fooIndirect:()V,5	0
+java/io/PrintStream.println:(Ljava/lang/String;)V	Deligating.fooIndirect:()V,13	0
+java/io/PrintStream.println:(Ljava/lang/String;)V	Deligating.fooIndirect:()V,21	0
+java/io/PrintStream.println:(Ljava/lang/String;)V	A.foo:()V,5	2
+java/io/PrintStream.println:(Ljava/lang/String;)V	A.foo:()V,13	2
+java/io/PrintStream.println:(Ljava/lang/String;)V	A.foo:()V,21	2
+
