@@ -7,6 +7,19 @@ Agec, an arbitrary-granularity execution clone detection tool
 Agec generates all possible execution sequences from Java byte code(s)
 to detect the same execution sub-sequences from the distinct places in source files.
 
+## Short walktrough
+
+This sample is to detect code clones from a Java file: ShowWeekday.java.
+
+```bash
+$ javac ShowWeekday.java
+$ javap -c -p -l -constants ShowWeekday > disasm/ShowWeekday.asm
+$ gen_ngram.py -a disasm > ngrams.txt
+$ det_clone.py ngrams.txt > clone-indices-md.txt
+$ mmd_clone.py clone-indices-md.txt > clone-indices.txt
+$ tosl_clone.py -a disasm clone-indices.txt > clone-linenums.txt
+```
+
 ## Usage
 
 Agec's core programs are:
@@ -98,19 +111,6 @@ in the current directory.
 To expand a jar file and disassemble class files contained the jar file,
 
 usage: run_disassemble.py --jar jar_file -o asm_directory
-
-## A Small Example
-
-This sample is to detect code clones from a Java file: ShowWeekday.java.
-
-```bash
-$ javac ShowWeekday.java
-$ javap -c -p -l -constants ShowWeekday > disasm/ShowWeekday.asm
-$ gen_ngram.py -a disasm > ngrams.txt
-$ det_clone.py ngrams.txt > clone-indices-md.txt
-$ mmd_clone.py clone-indices-md.txt > clone-indices.txt
-$ tosl_clone.py -a disasm clone-indices.txt > clone-linenums.txt
-```
 
 ## Publish
 
